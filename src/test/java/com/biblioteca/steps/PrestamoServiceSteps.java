@@ -230,11 +230,6 @@ public class PrestamoServiceSteps extends CucumberSpringConfiguration {
         assertEquals(esperado, resultadoCalculo, 0.01);
     }
 
-    @Entonces("el recargo B devuelto es {double}")
-    public void verificarRecargoB(double esperado) {
-        assertEquals(esperado, resultadoCalculo, 0.01);
-    }
-
     @Entonces("la devolución finaliza correctamente")
     public void verificarDevolucionExito() {
         assertNull(excepcionCapturada);
