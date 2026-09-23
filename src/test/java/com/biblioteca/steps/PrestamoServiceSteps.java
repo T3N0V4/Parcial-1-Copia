@@ -210,7 +210,7 @@ public class PrestamoServiceSteps extends CucumberSpringConfiguration {
         listaPrestamos = prestamoService.listarPrestamos();
     }
 
-    // --- VERIFICACIONES (ENTONCES) ---
+    // --- VERIFICACIÓNES (ENTONCES) ---
 
     @Entonces("se lanza una excepción en prestamo con mensaje {string}")
     public void verificarExcepcion(String mensajeEsperado) {
