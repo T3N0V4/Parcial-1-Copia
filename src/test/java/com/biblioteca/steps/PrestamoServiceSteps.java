@@ -154,18 +154,6 @@ public class PrestamoServiceSteps extends CucumberSpringConfiguration {
         resultadoCalculo = prestamoService.calcularRecargoA(p);
     }
 
-    @Cuando("calculo el recargo B para un préstamo nulo")
-    public void calcularRecargoBNulo() {
-        resultadoCalculo = prestamoService.calcularRecargoB(null);
-    }
-
-    @Cuando("calculo el recargo B para un préstamo de hace {int} días")
-    public void calcularRecargoBConDias(int dias) {
-        Prestamo p = new Prestamo();
-        p.setFechaPrestamo(LocalDate.now().minusDays(dias));
-        resultadoCalculo = prestamoService.calcularRecargoB(p);
-    }
-
     @Cuando("intento devolver el préstamo con id {long}")
     public void intentoDevolverLibro(Long id) {
         try {

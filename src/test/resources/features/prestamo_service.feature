@@ -78,42 +78,6 @@ Característica: Cobertura PrestamoService
     Cuando calculo el recargo A para un préstamo de hace 100 días
     Entonces el recargo A devuelto es 69750.0
 
-  # --- CALCULAR RECARGO B ---
-  Escenario: Calcular recargo B para préstamo nulo
-    Cuando calculo el recargo B para un préstamo nulo
-    Entonces el recargo B devuelto es 0.0
-
-  Escenario: Calcular recargo B para tramo 0 a 7 días
-    Cuando calculo el recargo B para un préstamo de hace 5 días
-    Entonces el recargo B devuelto es 0.0
-
-  Escenario: Calcular recargo B para tramo 8 a 14 días
-    Cuando calculo el recargo B para un préstamo de hace 10 días
-    Entonces el recargo B devuelto es 300.0
-
-  Escenario: Calcular recargo B para tramo 15 a 21 días
-    Cuando calculo el recargo B para un préstamo de hace 20 días
-    Entonces el recargo B devuelto es 1950.0
-
-  Escenario: Calcular recargo B para tramo 22 a 30 días
-    Cuando calculo el recargo B para un préstamo de hace 25 días
-    Entonces el recargo B devuelto es 3600.0
-
-  Escenario: Calcular recargo B para tramo 31 a 45 días
-    Cuando calculo el recargo B para un préstamo de hace 40 días
-    Entonces el recargo B devuelto es 9900.0
-
-  Escenario: Calcular recargo B para tramo 46 a 60 días
-    Cuando calculo el recargo B para un préstamo de hace 50 días
-    Entonces el recargo B devuelto es 17200.0
-
-  Escenario: Calcular recargo B para tramo 61 a 90 días
-    Cuando calculo el recargo B para un préstamo de hace 70 días
-    Entonces el recargo B devuelto es 31500.0
-
-  Escenario: Calcular recargo B para tramo mayor a 90 días
-    Cuando calculo el recargo B para un préstamo de hace 100 días
-    Entonces el recargo B devuelto es 69750.0
 
   # --- DEVOLVER LIBRO Y DEVOLVER LIBRO ANTIGUO ---
   Escenario: Error al devolver préstamo inexistente

@@ -18,7 +18,13 @@ public class PrestamoService {
     private final UsuarioRepository usuarioRepository;
     private final LibroRepository libroRepository;
     private final PrestamoRepository prestamoRepository;
-
+    private static final double RECARGO_8_A_14 = 100.0;
+private static final double RECARGO_15_A_21 = 150.0;
+private static final double RECARGO_22_A_30 = 200.0;
+private static final double RECARGO_31_A_45 = 300.0;
+private static final double RECARGO_46_A_60 = 400.0;
+private static final double RECARGO_61_A_90 = 500.0;
+private static final double RECARGO_MAS_90 = 750.0;
     public PrestamoService(
             UsuarioRepository usuarioRepository,
             LibroRepository libroRepository,
@@ -89,73 +95,31 @@ public class PrestamoService {
     }
 
     if (dias <= 14) {
-        return (dias - 7) * 100;
+        return (dias - 7) * RECARGO_8_A_14;
     }
 
     if (dias <= 21) {
-        return (dias - 7) * 150;
+        return (dias - 7) * RECARGO_15_A_21;
     }
 
     if (dias <= 30) {
-        return (dias - 7) * 200;
+        return (dias - 7) * RECARGO_22_A_30;
     }
 
     if (dias <= 45) {
-        return (dias - 7) * 300;
+        return (dias - 7) * RECARGO_31_A_45;
     }
 
     if (dias <= 60) {
-        return (dias - 7) * 400;
+        return (dias - 7) * RECARGO_46_A_60;
     }
 
     if (dias <= 90) {
-        return (dias - 7) * 500;
+        return (dias - 7) * RECARGO_61_A_90;
     }
 
-    return (dias - 7) * 750;
+    return (dias - 7) * RECARGO_MAS_90;
 }
-
-
-public double calcularRecargoB(Prestamo prestamo) {
-
-    if (prestamo == null) {
-        return 0;
-    }
-
-    long dias = ChronoUnit.DAYS.between(
-            prestamo.getFechaPrestamo(),
-            LocalDate.now());
-
-    if (dias <= 7) {
-        return 0;
-    }
-
-    if (dias <= 14) {
-        return (dias - 7) * 100;
-    }
-
-    if (dias <= 21) {
-        return (dias - 7) * 150;
-    }
-
-    if (dias <= 30) {
-        return (dias - 7) * 200;
-    }
-
-    if (dias <= 45) {
-        return (dias - 7) * 300;
-    }
-
-    if (dias <= 60) {
-        return (dias - 7) * 400;
-    }
-
-    if (dias <= 90) {
-        return (dias - 7) * 500;
-    }
-
-    return (dias - 7) * 750;
-}	
 
     public void devolverLibro(Long prestamoId) {
 
